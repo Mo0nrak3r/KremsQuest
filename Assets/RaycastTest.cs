@@ -6,6 +6,28 @@ using UnityEngine.XR.ARFoundation;
 public class RaycastTest : MonoBehaviour
 {
 
+    ARAnchor CreateAnchor(in ARRaycastHit hit)
+{
+    ARAnchor anchor;
+
+    // ... here, we'll place the plane anchoring code!
+    
+    // Otherwise, just create a regular anchor at the hit pose
+
+    // Note: the anchor can be anywhere in the scene hierarchy
+    var instantiatedObject = Instantiate(_prefabToPlace, hit.pose.position, hit.pose.rotation);
+
+    // Make sure the new GameObject has an ARAnchor component
+    anchor = instantiatedObject.GetComponent<ARAnchor>();
+    if (anchor == null)
+    {
+        anchor = instantiatedObject.AddComponent<ARAnchor>();
+    }
+    Debug.Log($"Created regular anchor (id: {anchor.nativePtr}).");
+
+    return anchor;
+}
+
     // The prefab to instancieate on touch.
     [SerializeField]
     private GameObject _prefabToPlace;
@@ -40,7 +62,10 @@ public class RaycastTest : MonoBehaviour
             var hitPose = Hits[0].pose;
 
             // Instantiate prefab at the hit pose
-            Instantiate(_prefabToPlace, hitPose.position, hitPose.rotation);
+            //Instantiate(_prefabToPlace, hitPose.position, hitPose.rotation);
+
+            // Create anchor
+            CreateAnchor(Hits[0]);
 
             Debug.Log($"Instanciated on: {Hits[0].hitType}");
         }
