@@ -1,11 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 public class RaycastTest : MonoBehaviour
 {
 
+
+    // The prefab to instancieate on touch.
+    [SerializeField]
+    private GameObject _prefabToPlace;
+
+    // Chache ARRaycastManager GameObject from ARCoreSession
+    private ARRaycastManager _raycastManager;
+
+    // Cache ARAnchorManager GameObject from XROrigin
+    private ARAnchorManager _anchorManager;
+
+    // Reference to AROcclusionManager that should be added to the AR Camera
+    // game object that contains the Camera and ARCameraBackground components.
+    public AROcclusionManager occlusionManager;
+
+
+    //List for Rraycast hits is re-used by raycast manager
+    private static readonly List<ARRaycastHit> Hits = new List<ARRaycastHit>();
+    
     ARAnchor CreateAnchor(in ARRaycastHit hit)
     {
         ARAnchor anchor;
@@ -67,20 +88,6 @@ public class RaycastTest : MonoBehaviour
         return anchor;
     }
 
-    // The prefab to instancieate on touch.
-    [SerializeField]
-    private GameObject _prefabToPlace;
-
-    // Chache ARRaycastManager GameObject from ARCoreSession
-    private ARRaycastManager _raycastManager;
-
-    // Cache ARAnchorManager GameObject from XROrigin
-    private ARAnchorManager _anchorManager;
-
-    //List for Rraycast hits is re-used by raycast manager
-    private static readonly List<ARRaycastHit> Hits = new List<ARRaycastHit>();
-
-
     void Awake()
     {
         _raycastManager = GetComponent<ARRaycastManager>();
@@ -98,11 +105,10 @@ public class RaycastTest : MonoBehaviour
 
 
         // Perform Raycast to any kind of trackable
-        if(_raycastManager.Raycast(touch.position, Hits, UnityEngine.XR.ARSubsystems.TrackableType.All))
+        if(_raycastManager.Raycast(touch.position, Hits, UnityEngine.XR.ARSubsystems.TrackableType.AllTypes))
         {
             // Raycast hits are sorted by distance, so the first one will be the closest hit
             var hitPose = Hits[0].pose;
-
             // Instantiate prefab at the hit pose
             //Instantiate(_prefabToPlace, hitPose.position, hitPose.rotation);
 
