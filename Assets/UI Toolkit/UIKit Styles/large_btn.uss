@@ -1,0 +1,22 @@
+.btn-large {
+    font-size: 32px;
+    -unity-text-align: middle-center;
+    color: rgb(223, 211, 234);
+    background-color: rgb(37, 24, 46);
+    border-left-color: rgb(159, 74, 234);
+    border-right-color: rgb(159, 74, 234);
+    border-top-color: rgb(159, 74, 234);
+    border-bottom-color: rgb(159, 74, 234);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
