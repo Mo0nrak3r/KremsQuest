@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/SplashUIKit.uss?fileID=7433441132597879392&amp;guid=b2031e71857c4114fa11e7e9a420c264&amp;type=3#SplashUIKit" />
+    <ui:VisualElement name="splash_screen_container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Material/SplashScreenRenderText.renderTexture?fileID=8400000&amp;guid=7d9d7575db5824149a45987404dd0c9e&amp;type=2#SplashScreenRenderText&apos;); -unity-background-scale-mode: stretch-to-fill; width: auto; height: auto;" />
+</ui:UXML>
