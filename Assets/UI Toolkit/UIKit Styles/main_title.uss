@@ -1,7 +1,8 @@
 .main-title {
     color: rgb(223, 211, 234);
     -unity-font-style: bold;
-    font-size: 32px;
+    font-size: 120px;
     -unity-font: initial;
     -unity-text-align: middle-center;
+    flex-wrap: wrap;
 }

@@ -1,5 +1,5 @@
 .btn-large {
-    font-size: 32px;
+    font-size: 80px;
     -unity-text-align: middle-center;
     color: rgb(223, 211, 234);
     background-color: rgb(37, 24, 46);
@@ -7,16 +7,19 @@
     border-right-color: rgb(159, 74, 234);
     border-top-color: rgb(159, 74, 234);
     border-bottom-color: rgb(159, 74, 234);
-    border-left-width: 4px;
-    border-right-width: 4px;
-    border-top-width: 4px;
-    border-bottom-width: 4px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-left: 16%;
+    margin-right: 16%;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    -unity-font-style: bold;
 }
