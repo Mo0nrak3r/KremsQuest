@@ -6,3 +6,75 @@
     -unity-text-align: middle-center;
     flex-wrap: wrap;
 }
+
+.primary-label {
+    font-size: 60px;
+    color: rgb(12, 11, 11);
+    -unity-text-align: middle-left;
+}
+
+.transparent-btn {
+    -unity-text-align: middle-center;
+    width: auto;
+    background-color: rgba(243, 242, 250, 0.43);
+    border-left-color: rgb(252, 230, 41);
+    border-right-color: rgb(15, 15, 17);
+    border-top-color: rgb(252, 230, 41);
+    border-bottom-color: rgb(15, 15, 17);
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-self: center;
+    font-size: 32px;
+    color: rgba(144, 148, 149, 0.8);
+}
+
+.filter-btn {
+    font-size: 42px;
+    align-self: center;
+    padding-right: 14px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    padding-left: 14px;
+    -unity-font-style: bold;
+    background-color: rgb(252, 230, 41);
+    color: rgb(0, 0, 0);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.cta-start-btn {
+    font-size: 60px;
+    -unity-text-align: middle-center;
+    align-self: auto;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    -unity-font-style: bold;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    background-color: rgb(252, 230, 41);
+}

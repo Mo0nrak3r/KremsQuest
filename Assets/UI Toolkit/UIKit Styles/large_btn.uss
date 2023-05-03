@@ -1,12 +1,12 @@
 .btn-large {
     font-size: 80px;
     -unity-text-align: middle-center;
-    color: rgb(223, 211, 234);
-    background-color: rgb(37, 24, 46);
-    border-left-color: rgb(159, 74, 234);
-    border-right-color: rgb(159, 74, 234);
-    border-top-color: rgb(159, 74, 234);
-    border-bottom-color: rgb(159, 74, 234);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-left-color: rgb(252, 230, 41);
+    border-right-color: rgb(252, 230, 41);
+    border-top-color: rgb(252, 230, 41);
+    border-bottom-color: rgb(252, 230, 41);
     border-left-width: 8px;
     border-right-width: 8px;
     border-top-width: 8px;

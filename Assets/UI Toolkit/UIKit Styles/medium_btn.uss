@@ -1,7 +1,7 @@
 .btn-medium {
     font-size: 85px;
-    color: rgb(223, 211, 234);
-    background-color: rgba(32, 30, 34, 0.84);
+    color: rgb(0, 0, 0);
+    background-color: rgba(252, 230, 41, 0.98);
     -unity-background-scale-mode: scale-and-crop;
     border-left-color: rgb(202, 140, 245);
     border-right-color: rgb(202, 140, 245);
