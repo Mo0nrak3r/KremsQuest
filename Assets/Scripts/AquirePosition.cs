@@ -5,6 +5,8 @@ public class TestLocationService : MonoBehaviour
 {
     public UnityEngine.UI.Text Log;
 
+    public RectTransform rectTransform;
+
     IEnumerator Start()
     {
         // Check if the user has location service enabled.
@@ -38,9 +40,10 @@ public class TestLocationService : MonoBehaviour
         }
         else
         {
-            // If the connection succeeded, this retrieves the device's current location and displays it in the Console window.
+       // If the connection succeeded, this retrieves the device's current location and displays it in the Console window.
             logText = "Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp;
         }
+    
         if (Log)
         {
             Log.text = logText;
@@ -52,4 +55,11 @@ public class TestLocationService : MonoBehaviour
         // Stops the location service if there is no need to query location updates continuously.
         Input.location.Stop();
     }
+
+    void Update()
+    {
+        // Orient an object to point northward.
+        rectTransform.rotation = Quaternion.Euler(0, 0, -Input.compass.trueHeading);
+    }
+         
 }
