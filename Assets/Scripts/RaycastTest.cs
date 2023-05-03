@@ -19,9 +19,14 @@ public class RaycastTest : MonoBehaviour
     // Cache ARAnchorManager GameObject from XROrigin
     private ARAnchorManager _anchorManager;
 
+    // Cache ARPlaneManager GameObject from ARCoreSession
+    // private ARPlaneManager _planeManager;
+
     // Reference to AROcclusionManager that should be added to the AR Camera
     // game object that contains the Camera and ARCameraBackground components.
     public AROcclusionManager occlusionManager;
+
+    public UnityEngine.UI.Text Log;
 
 
     //List for Rraycast hits is re-used by raycast manager
@@ -29,15 +34,16 @@ public class RaycastTest : MonoBehaviour
     
     ARAnchor CreateAnchor(in ARRaycastHit hit)
     {
+        var logText = "";
         ARAnchor anchor;
         // Get the trackable ID in case the raycast hit a trackable
-        //var hitTrackableId = hit.trackableId;
+        var hitTrackableId = hit.trackableId;
 
         // Attempt to retrieve a plane if the trackable is of type plane
         // and the the raycast hit one
-        //var hitPlane = _planeManager.GetPlane(hitTrackableId);
-
-        if (hit.trackable is ARPlane hitPlane)
+        // var hitPlane = _planeManager.GetPlane(hitTrackableId);
+        var planeManager = GetComponent<ARPlaneManager>();
+        if (hit.trackable is ARPlane hitPlane && planeManager)
         {
             // The raycast hit a plane - therefore, attach the anchor to the plane.
             // According to the AR Foundation documentation:
@@ -52,6 +58,7 @@ public class RaycastTest : MonoBehaviour
             // The following code temporarily replaces the default prefab
             // with the one we want to instantiate from our script, to ensure
             // it doesn't interfere with potential other logic in your app.
+        
             var oldPrefab = _anchorManager.anchorPrefab;
             _anchorManager.anchorPrefab = _prefabToPlace;
             anchor = _anchorManager.AttachAnchor(hitPlane, hit.pose);
@@ -59,12 +66,12 @@ public class RaycastTest : MonoBehaviour
 
             // Note: the following method seems to produce an offset when placing
             // the prefab instance in AR Foundation 5.0 pre 8
-            //anchor = _anchorManager.AttachAnchor(hitPlane, hit.pose);
+            anchor = _anchorManager.AttachAnchor(hitPlane, hit.pose);
             // Make our prefab a child of the anchor, so that it's moved
             // with that anchor.
-            //Instantiate(_prefabToPlace, anchor.transform);
+            Instantiate(_prefabToPlace, anchor.transform);
 
-            Debug.Log($"Created anchor attachment for plane (id: {anchor.nativePtr}).");
+            logText = "Created anchor attachment for plane (id: "+anchor.nativePtr+").";            
         }
         else
         {
@@ -81,11 +88,21 @@ public class RaycastTest : MonoBehaviour
                 // is the way to go! ARAnchor will add itself to the
                 // anchor manager once it is enabled.
                 anchor = instantiatedObject.AddComponent<ARAnchor>();
+                logText = "Created regular anchor (id: " +anchor.nativePtr + ").";
             }
-            Debug.Log($"Created regular anchor (id: {anchor.nativePtr}).");
         }
-
+        if (Log)
+        {
+            Log.text = logText;
+        }
+        else
+        {
+            Debug.Log(logText);
+        }
         return anchor;
+        
+
+        
     }
 
     void Awake()
@@ -104,7 +121,7 @@ public class RaycastTest : MonoBehaviour
         }
 
 
-        // Perform Raycast to any kind of trackable
+        // Perform Raycast to any kind of trackable / AllTypes / ArPlane / FeaturePoint
         if(_raycastManager.Raycast(touch.position, Hits, UnityEngine.XR.ARSubsystems.TrackableType.AllTypes))
         {
             // Raycast hits are sorted by distance, so the first one will be the closest hit
@@ -115,7 +132,15 @@ public class RaycastTest : MonoBehaviour
             // Create anchor
             CreateAnchor(Hits[0]);
 
-            Debug.Log($"Instanciated on: {Hits[0].hitType}");
+            var logText = "Instanciated on: "+ Hits[0].hitType;
+            if (Log)
+            {
+                Log.text = logText;
+            }
+            else
+            {
+                Debug.Log(logText);
+            }
         }
     }
 }
