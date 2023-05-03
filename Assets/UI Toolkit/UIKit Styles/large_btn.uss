@@ -2,7 +2,7 @@
     font-size: 80px;
     -unity-text-align: middle-center;
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(237, 234, 222);
     border-left-color: rgb(252, 230, 41);
     border-right-color: rgb(252, 230, 41);
     border-top-color: rgb(252, 230, 41);
