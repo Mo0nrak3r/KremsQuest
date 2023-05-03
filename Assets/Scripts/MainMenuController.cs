@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -15,11 +16,18 @@ public class MainMenuController : MonoBehaviour
         root = mainMenuUIDocument.rootVisualElement;
 
         // Connect button click events
-        root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
+        root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
+        root.Q<Button>("ARMode").clicked += () => LoadTargetScene("Geolocation"); 
+        //root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
         root.Q<Button>("LeaderBoard").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
+    }
+
+    private void LoadTargetScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     private void ShowNotImplementedPopup()
