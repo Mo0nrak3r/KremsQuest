@@ -1,44 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class GrapeScript : MonoBehaviour
 {
     public ScoreScript score;
-    public float floatStrength;
 
-    float minSize = 0.01f;
+    float minSize = 0.001f;
     float growthRate = -2.5f;
     float scale = 1f;
     bool collected = false;
+    bool once = true;
 
-    Vector3 floatY;
-    float originalY;
+    float deltaT;
+
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    public GameObject mesh;
 
     void Start()
     {
+        if (collected)
+        {
+            Destroy(gameObject);
+            return;
+        }
         var ob = GameObject.FindGameObjectWithTag("Score");
         score = ob.GetComponent<ScoreScript>();
-        this.originalY = this.transform.position.y;
     }
     private void OnTriggerEnter(Collider other)
     {
-        score.addGrapes(1);
-        collected = true;
+        deltaT = 0;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        deltaT += Time.deltaTime;
+        if(deltaT > 0.5f)
+            collected = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        deltaT = 0;
     }
     void Update()
     {
-        floatY = transform.position;
-        floatY.y = originalY + (Mathf.Sin(Time.time) * floatStrength);
-        transform.position = floatY;
-
         if (collected)
         {
             transform.localScale = Vector3.one * scale;
             scale += growthRate * Time.deltaTime;
             if (scale < minSize)
-                Destroy(gameObject);
+            {
+                if (once)
+                {
+                    score.addGrapes(1);
+                    once = false;
+                    Destroy(mesh);
+                    ps1.Stop();
+                    ps2.Play();
+                }
+                Destroy(gameObject, 2.0f);
+            }
         }
     }
 }
