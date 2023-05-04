@@ -4,26 +4,26 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour
+public class QuestViewController : MonoBehaviour
 {
-    public UIDocument mainMenuUIDocument;
+    public UIDocument questViewUIDocument;
     public VisualTreeAsset popupDialogTemplate;
 
     private VisualElement root;
 
     void Start()
     {
-        root = mainMenuUIDocument.rootVisualElement;
+        root = questViewUIDocument.rootVisualElement;
 
         // Connect button click events
-        root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
-        root.Q<Button>("ARMode").clicked += () => LoadTargetScene("Geolocation"); 
+        root.Q<Button>("BackButton").clicked += () => LoadTargetScene("MainMenuScene");
+        /*root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
+        root.Q<Button>("ARMode").clicked += () => LoadTargetScene("Geolocation");
         //root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("LeaderBoard").clicked += () =>LoadTargetScene("LeaderboardScene");
+        root.Q<Button>("LeaderBoard").clicked += () => LoadTargetScene("LeaderboardScene");
         root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
-        root.Q<Label>("Balance").text = ScoreScript.numberOfGrapes.ToString();
+        root.Q<Button>("Help").clicked += ShowNotImplementedPopup;*/
     }
 
     private void LoadTargetScene(string sceneName)
@@ -31,7 +31,7 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    private void ShowNotImplementedPopup()
+   /* private void ShowNotImplementedPopup()
     {
         var popupDialog = popupDialogTemplate.CloneTree().Q("PopupDialog");
         root.Add(popupDialog);
@@ -44,5 +44,5 @@ public class MainMenuController : MonoBehaviour
         popupDialog.Q<Button>("CloseButton").clicked += () => {
             root.Remove(popupDialog);
         };
-    }
+    }*/
 }
