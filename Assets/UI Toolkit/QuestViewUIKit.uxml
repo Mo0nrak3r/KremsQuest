@@ -9,10 +9,10 @@
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: space-around; align-self: stretch; height: 60%; margin-left: 2%; margin-right: 2%;">
             <ui:Label tabindex="-1" text="Select Quest" display-tooltip-when-elided="true" enable-rich-text="false" class="primary-label" />
-            <ui:Button text="Krems Landmark Hunt" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
-            <ui:Button text="Krems Nature Trail" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
-            <ui:Button text="Krems Legends and Lore" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
-            <ui:Button text="Krems Architectural Odyssey" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
+            <ui:Button text="Explorer" display-tooltip-when-elided="true" name="Explorer" class="btn-large" style="font-size: 60px;" />
+            <ui:Button text="Landmark Hunt" display-tooltip-when-elided="true" name="Landmark" class="btn-large" style="font-size: 60px;" />
+            <ui:Button text="Legends and Lore" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
+            <ui:Button text="Architectural Odyssey" display-tooltip-when-elided="true" class="btn-large" style="font-size: 60px;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: space-around; align-self: stretch; height: 20%; margin-left: 2%; margin-right: 2%;">
             <ui:Button text="Start" display-tooltip-when-elided="true" class="cta-start-btn" />
