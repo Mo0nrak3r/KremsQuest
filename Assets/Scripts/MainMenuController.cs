@@ -20,7 +20,7 @@ public class MainMenuController : MonoBehaviour
         root.Q<Button>("ARMode").clicked += () => LoadTargetScene("Geolocation"); 
         //root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("LeaderBoard").clicked += ShowNotImplementedPopup;
+        root.Q<Button>("LeaderBoard").clicked += () =>LoadTargetScene("LeaderboardScene");
         root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
     }

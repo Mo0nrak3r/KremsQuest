@@ -1,0 +1,28 @@
+VisualElement {
+    height: 100%;
+    flex-direction: column;
+}
+
+.top-three-buttons {
+    width: 400px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 400px;
+    justify-content: center;
+}
+
+.filter-timer-buttons {
+    height: 100px;
+    width: 20%;
+}
+
+.leader-boards-buttons {
+    width: 100%;
+    height: 10%;
+}

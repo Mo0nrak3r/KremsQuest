@@ -20,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RayCast.unity
     guid: 27b1ac17725ebc64c91b9c697d9f97a4
+  - enabled: 1
+    path: Assets/Scenes/Geolocation.unity
+    guid: c208ff0e5b7baf540ba089fb9e456e4f
+  - enabled: 1
+    path: Assets/Scenes/QuestViewScene.unity
+    guid: 844e88d2b59ceba42bbd4f03482d9426
+  - enabled: 1
+    path: Assets/Scenes/LeaderboardScene.unity
+    guid: b6c4e4aa9ea10b64792e73054f680dfc
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
