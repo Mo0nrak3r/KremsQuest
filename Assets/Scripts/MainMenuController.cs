@@ -23,6 +23,7 @@ public class MainMenuController : MonoBehaviour
         root.Q<Button>("LeaderBoard").clicked += () =>LoadTargetScene("LeaderboardScene");
         root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
         root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
+        root.Q<Label>("Balance").text = ScoreScript.numberOfGrapes.ToString();
     }
 
     private void LoadTargetScene(string sceneName)
