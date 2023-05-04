@@ -17,13 +17,13 @@ public class QuestViewController : MonoBehaviour
 
         // Connect button click events
         root.Q<Button>("BackButton").clicked += () => LoadTargetScene("MainMenuScene");
-        /*root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
+        root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
         root.Q<Button>("ARMode").clicked += () => LoadTargetScene("Geolocation");
         //root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("LeaderBoard").clicked += () => LoadTargetScene("LeaderboardScene");
-        root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("Help").clicked += ShowNotImplementedPopup;*/
+        //root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
+        //root.Q<Button>("LeaderBoard").clicked += () => LoadTargetScene("LeaderboardScene");
+        //root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
+        //root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
     }
 
     private void LoadTargetScene(string sceneName)
