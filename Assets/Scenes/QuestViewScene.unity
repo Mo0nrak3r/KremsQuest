@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e9df39280ae7744bf128b4c8371619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questViewUIDocument: {fileID: 0}
+  questViewUIDocument: {fileID: 2054682144}
   popupDialogTemplate: {fileID: 0}
 --- !u!4 &342493877
 Transform:
