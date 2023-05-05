@@ -19,10 +19,10 @@ public class MainMenuController : MonoBehaviour
         root.Q<Button>("QuestGames").clicked += () => LoadTargetScene("QuestViewScene");
         root.Q<Button>("ARMode").clicked += () => LoadTargetScene("ARModes"); 
         //root.Q<Button>("ARMode").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
+        //root.Q<Button>("Tours").clicked += ShowNotImplementedPopup;
         root.Q<Button>("LeaderBoard").clicked += () =>LoadTargetScene("LeaderboardScene");
-        root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
-        root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
+        //root.Q<Button>("Settings").clicked += ShowNotImplementedPopup;
+       // root.Q<Button>("Help").clicked += ShowNotImplementedPopup;
         root.Q<Label>("Balance").text = ScoreScript.numberOfGrapes.ToString();
     }
 
